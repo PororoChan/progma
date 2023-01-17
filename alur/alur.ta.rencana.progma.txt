@@ -1,0 +1,34 @@
+ProgMa (Project Guidance Management)
+
+user role =>
+admin, guru, siswa
+
+role job user => 
+admin [
+   - master user login (untuk role guru dan admin)
+   - master role
+   - master file (menampilkan file yang sudah di attach oleh siswa ke guru atau sebaliknya)
+   - master guidance (menampilkan proses bimbingan dari yang status diserahkan/acc/revisi dari murid ke guru atau sebaliknya)
+]
+
+guru [
+  - master kelas (guru membuat kelas dengan proses tersebut akan menghasilkan token yang bisa untuk join siswa ke dalam kelas tersebut)
+  - master file (menampilkan file berdasarkan user siswa pengirim di masing" kelas)
+  - proses bimbingan [
+    hasil : status bimbingan (acc, revisi, dikirimkan)
+  ]
+  - proses revisi dari revisi bimbingan yang diberikan sebelumnya
+  - master history bimbingan (guru menginputkan history bimbingan kepada setiap siswa yang sudah melakukan bimbingan)
+  - setting chat dalam kelas (enabled chat & disabled chat) untuk setting chat siswa boleh menggunakan fitur chat public di kelas
+]
+
+siswa [
+  - menu untuk menampilkan list data daftar tugas baik yang belum atau sudah selesai diserahkan
+  - master kelas (user role siswa memasukkan token yang sudah dishare oleh guru dan masuk ke dalam kelas)
+  - master file (menampilkan file yang sudah di submit di setiap kelas)
+  - proses bimbingan
+]
+
+* proses penambahan kelas setiap siswa, ketika siswa input token untuk masuk kelas terdeteksi memang role yang masuk tersebut merupakan siswa
+   maka setelah token berhasil dan benar, maka dalam table msclass kolom student akan otomatis menambah dan update userid dari siswa yang baru masuk dalam bentuk array 
+   contoh = [5, 6, 1, 19, 90, 22, 50]
