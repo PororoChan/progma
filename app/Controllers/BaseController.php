@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Msrole;
 use App\Models\Msuser;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
@@ -53,7 +54,9 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Load Model
+        $this->db = db_connect();
         $this->user = new Msuser();
+        $this->role = new Msrole();
 
         // Preload any models, libraries, etc, here.
 

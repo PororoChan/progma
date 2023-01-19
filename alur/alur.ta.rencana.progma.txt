@@ -7,6 +7,7 @@ role job user =>
 admin [
    - master user login (untuk role guru dan admin)
    - master role
+   - master kelas
    - master file (menampilkan file yang sudah di attach oleh siswa ke guru atau sebaliknya)
    - master guidance (menampilkan proses bimbingan dari yang status diserahkan/acc/revisi dari murid ke guru atau sebaliknya)
 ]

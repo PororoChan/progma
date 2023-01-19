@@ -1,0 +1,127 @@
+CRITICAL - 2023-01-18 14:40:03 --> Illegal string offset 'gender'
+in APPPATH\Views\v_register.php on line 30.
+ 1 APPPATH\Views\v_register.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'gender\'', 'APPPATH\\Views\\v_register.php', 30, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_register.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('v_register', [], true)
+ 5 APPPATH\Controllers\Auth\Register.php(16): view('v_register', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth\Register->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-18 14:42:44 --> Illegal string offset 'gender'
+in APPPATH\Views\v_register.php on line 44.
+ 1 APPPATH\Views\v_register.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'gender\'', 'APPPATH\\Views\\v_register.php', 44, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_register.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('v_register', [], true)
+ 5 APPPATH\Controllers\Auth\Register.php(16): view('v_register', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth\Register->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-18 14:42:52 --> Illegal string offset 'gender'
+in APPPATH\Views\v_register.php on line 44.
+ 1 APPPATH\Views\v_register.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'gender\'', 'APPPATH\\Views\\v_register.php', 44, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_register.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('v_register', [], true)
+ 5 APPPATH\Controllers\Auth\Register.php(16): view('v_register', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth\Register->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-18 14:47:16 --> mysqli_sql_exception: Operand should contain 1 column(s) in C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ms...', 0)
+#1 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ms...')
+#2 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ms...')
+#3 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2295): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ms...', Array, false)
+#4 C:\xampp\htdocs\progma\app\Models\Msuser.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\progma\app\Controllers\Auth\Register.php(92): App\Models\Msuser->tambah(Array)
+#6 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(934): App\Controllers\Auth\Register->studentAdd()
+#7 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#8 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\progma\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-01-18 14:49:59 --> mysqli_sql_exception: Unknown column 'Array' in 'field list' in C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ms...', 0)
+#1 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ms...')
+#2 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ms...')
+#3 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2295): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ms...', Array, false)
+#4 C:\xampp\htdocs\progma\app\Models\Msuser.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\progma\app\Controllers\Auth\Register.php(93): App\Models\Msuser->tambah(Array)
+#6 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(934): App\Controllers\Auth\Register->studentAdd()
+#7 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#8 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\progma\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-01-18 14:52:59 --> mysqli_sql_exception: Unknown column 'Array' in 'field list' in C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ms...', 0)
+#1 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ms...')
+#2 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ms...')
+#3 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2295): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ms...', Array, false)
+#4 C:\xampp\htdocs\progma\app\Models\Msuser.php(30): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\progma\app\Controllers\Auth\Register.php(98): App\Models\Msuser->tambah(Array)
+#6 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(934): App\Controllers\Auth\Register->studentAdd()
+#7 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+#8 C:\xampp\htdocs\progma\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\progma\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-18 14:55:38 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\v_register.php on line 44.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('v_register', [], true)
+ 4 APPPATH\Controllers\Auth\Register.php(16): view('v_register', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth\Register->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-18 14:55:51 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\v_register.php on line 44.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('v_register', [], true)
+ 4 APPPATH\Controllers\Auth\Register.php(16): view('v_register', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth\Register->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Register))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-01-18 17:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-01-18 17:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-01-18 17:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-01-18 17:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-01-18 20:38:27 --> Invalid file: "split/v_footer.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('split/v_footer.php')
+ 2 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('split/v_footer', null, true)
+ 3 APPPATH\Views\dashboard\v_home.php(9): CodeIgniter\View\View->include('split/v_footer')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard\\v_home.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('dashboard/v_home', [], true)
+ 7 APPPATH\Controllers\Dashboard.php(14): view('dashboard/v_home', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-18 22:24:45 --> Cannot use object of type stdClass as array
+in APPPATH\Views\split\v_navbar.php on line 37.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('split/v_navbar', null, true)
+ 4 APPPATH\Views\split\v_header.php(19): CodeIgniter\View\View->include('split/v_navbar')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\split\\v_header.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\View\View.php(431): CodeIgniter\View\View->render('split/v_header', null, true)
+ 8 APPPATH\Views\dashboard\v_home.php(1): CodeIgniter\View\View->include('split/v_header')
+ 9 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\dashboard\\v_home.php')
+10 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('dashboard/v_home', [], true)
+12 APPPATH\Controllers\Dashboard.php(15): view('dashboard/v_home', [...])
+13 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->index()
+14 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+15 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

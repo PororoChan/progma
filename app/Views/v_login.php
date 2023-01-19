@@ -32,9 +32,9 @@
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    <a href="#">
+                                    <!-- <a href="#">
                                         <small>Forgot Password?</small>
-                                    </a>
+                                    </a> -->
                                 </div>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password" aria-describedby="password" />
@@ -52,14 +52,13 @@
                         </form>
 
                         <p class="text-center fs-7">
-                            <span>Don't have an account?</span>
-                            <a href="#">
-                                <span>Register here</span>
+                            <span>For Student?</span>
+                            <a href="<?= base_url('register/student') ?>">
+                                <span>Register here as student</span>
                             </a>
                         </p>
                     </div>
                 </div>
-                <!-- /Register -->
             </div>
         </div>
     </div>
@@ -69,9 +68,15 @@
 <?= $this->include('split/v_component') ?>
 <?= $this->include('split/script') ?>
 <script>
+    function resetForm() {
+        $('#form-login')[0].reset();
+        $('#uname').focus();
+    }
+
     function loginAuth() {
         var ic = `<i class='bx bx-loader-alt fs-4 bx-spin'></i>`;
         $('#btn-login').html(ic);
+        $('#btn-login').attr('disabled', true);
         var link = '<?= base_url('login/auth') ?>',
             uname = $('#uname').val(),
             pass = $('#password').val();
@@ -86,15 +91,29 @@
             },
             success: function(res) {
                 if (res.success == 1) {
-                    basicToast('bg-success', res.msg, 'bx bx-check');
+                    let icon = 'fas fa-user';
+                    if (res.role == 1) {
+                        icon = 'fas fa-users-cog';
+                    } else if (res.role == 2) {
+                        icon = 'fas fa-user-tie';
+                    } else if (res.role == 3) {
+                        icon = 'fas fa-users';
+                    }
+                    basicToast('bg-success', res.msg, icon);
+                    setTimeout(() => {
+                        window.location.href = '<?= base_url('dashboard') ?>';
+                    }, 1500);
                 } else {
                     basicToast('bg-warning', res.msg, 'bx bx-error');
+                    resetForm();
                 }
                 $('#btn-login').html('Log in');
+                $('#btn-login').removeAttr('disabled');
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 basicToast('bg-danger', thrownError, 'bx bx-error');
                 $('#btn-login').html('Log in');
+                $('#btn-login').removeAttr('disabled');
             }
         })
     }

@@ -34,6 +34,14 @@ $routes->add('/', 'Auth\Login::index');
 // Login Page
 $routes->add('/login', 'Auth\Login::index');
 $routes->add('/login/auth', 'Auth\Login::loginAuth');
+$routes->add('/logout', 'Auth\Login::logout');
+
+// Register for Student
+$routes->add('/register/student', 'Auth\Register::index');
+$routes->add('/register/student/add', 'Auth\Register::studentAdd');
+
+// Index Page
+$routes->add('/dashboard', 'Dashboard::index');
 
 /*
  * --------------------------------------------------------------------

@@ -13,9 +13,17 @@ class Msuser extends Model
         $this->db = db_connect();
         $this->builder = $this->db->table($this->table);
     }
-    public function getAll()
+    public function checkUser($username)
     {
-        return $this->builder->get()->getResultArray();
+        return $this->builder
+            ->where('username', $username)
+            ->get()->getRowArray();
+    }
+    public function getOne($userid)
+    {
+        return $this->builder
+            ->where('userid', $userid)
+            ->get()->getRowArray();
     }
     public function tambah($data)
     {
