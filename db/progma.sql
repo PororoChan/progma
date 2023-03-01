@@ -25,7 +25,7 @@ CREATE TABLE `msclass` (
   `token` varchar(255) DEFAULT NULL,
   `classtitle` varchar(255) DEFAULT NULL,
   `backimg` varchar(255) DEFAULT NULL,
-  `classauthor` varchar(255) DEFAULT NULL,
+  `classauthor` int(11) DEFAULT NULL,
   `student` varchar(255) DEFAULT NULL,
   `ishidden` tinyint(1) DEFAULT NULL,
   `isactive` int(11) DEFAULT NULL,
@@ -102,9 +102,14 @@ CREATE TABLE `msrole` (
   `updateddate` datetime DEFAULT NULL,
   `updatedby` int(11) DEFAULT NULL,
   PRIMARY KEY (`roleid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `msrole` */
+
+insert  into `msrole`(`roleid`,`rolename`,`createddate`,`createdby`,`updateddate`,`updatedby`) values 
+(1,'admin','2023-01-18 09:03:39',1,NULL,NULL),
+(2,'teacher','2023-01-18 14:29:01',1,NULL,NULL),
+(3,'student','2023-01-18 14:29:18',1,NULL,NULL);
 
 /*Table structure for table `msuser` */
 
@@ -123,12 +128,13 @@ CREATE TABLE `msuser` (
   `updateddate` datetime DEFAULT NULL,
   `updatedby` int(11) DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `msuser` */
 
 insert  into `msuser`(`userid`,`fullname`,`userdata`,`birthdate`,`username`,`password`,`role`,`createddate`,`createdby`,`updateddate`,`updatedby`) values 
-(2,'Super Admin',NULL,NULL,'admin','$2y$10$7GKFIt5m02Yo4nMsJgSmveBxZqN8Yunf2jHCa3SUNS99G.TDN0YgO',1,'2023-01-17 18:11:01',1,NULL,NULL);
+(2,'Super Admin',NULL,NULL,'admin','$2y$10$7GKFIt5m02Yo4nMsJgSmveBxZqN8Yunf2jHCa3SUNS99G.TDN0YgO',1,'2023-01-17 18:11:01',1,NULL,NULL),
+(14,'Reksho Satriyo','{\"gender\":\"male\",\"address\":\"Jl. Puter Ngijo Karangploso Malang\",\"bio\":\"Saya seorang siswa dengan keahlian membuat website\",\"profile\":\"1674047006_ae145f34f1fd54222c35.jpg\"}','2023-01-18','rekso123','$2y$10$riNyTSnKV/uoeSBwKNWteelywvLMFvJy41cQoqtaybb3009i96xfe',3,'2023-01-18 20:03:26',1,NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -42,6 +42,14 @@ $routes->add('/register/student/add', 'Auth\Register::studentAdd');
 
 // Index Page
 $routes->add('/dashboard', 'Dashboard::index');
+$routes->add('/user', 'master\User::index');
+$routes->add('/role', 'master\Role::index');
+$routes->add('/classroom', 'master\ClassGroup::index');
+
+// Datatable 
+$routes->add('/user/table', 'master\User::datatable');
+$routes->add('/role/table', 'master\Role::datatable');
+$routes->add('/classroom/table', 'master\ClassGroup::datatable');
 
 /*
  * --------------------------------------------------------------------

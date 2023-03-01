@@ -19,6 +19,23 @@ class Msuser extends Model
             ->where('username', $username)
             ->get()->getRowArray();
     }
+    public function sortable()
+    {
+        return [
+            null,
+            'msuser.fullname',
+            null,
+            null,
+            'msuser.username',
+            'msrole.rolename',
+        ];
+    }
+    public function datatable()
+    {
+        return $this->builder
+            ->select('msuser.fullname as fullname, msuser.userdata, msuser.username, msrole.rolename')
+            ->join('msrole', 'msrole.roleid=msuser.role');
+    }
     public function getOne($userid)
     {
         return $this->builder

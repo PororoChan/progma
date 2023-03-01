@@ -44,5 +44,26 @@
         $('#btn-logout').click(function() {
             logoutUser();
         })
+
+        // active navbar
+        var linkWeb = window.location.href;
+        $('.menu-inner .menu-item .menu-link').each(function(e) {
+            var linkThis = $(this).attr('href').split('/').pop();
+            $(this).parent().toggleClass('active', linkWeb.includes(linkThis));
+        })
+    })
+
+    // datatable-master
+    var mstable = $('#table-master').DataTable({
+        serverSide: true,
+        destroy: true,
+        autoWidth: false,
+        ajax: {
+            url: '<?= current_url(true) ?>/table',
+            type: 'post',
+            data: function(param) {
+                return param;
+            }
+        }
     })
 </script>

@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Filters\IsLogin;
+use App\Filters\IsNotLogin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -21,6 +23,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'isLogin'       => IsLogin::class,
+        'isNotLogin'    => IsNotLogin::class,
     ];
 
     /**
@@ -60,5 +64,17 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+        'isLogin' => [
+            'before' => [
+                '/login',
+                '/login/*',
+            ]
+        ],
+        'isNotLogin' => [
+            'before' => [
+                '/dashboard',
+            ]
+        ]
+    ];
 }
