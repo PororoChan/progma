@@ -6,11 +6,18 @@ use App\Controllers\BaseController;
 
 class Login extends BaseController
 {
-    public function index()
+    public function index($role = '')
     {
-        $data = [
-            'title' => 'Login Page | ProgMa',
-        ];
+        $role = deVal($role);
+        $data = array();
+        if ($role == 'teacher') {
+            $data['title'] = 'Progma | Login Teacher';
+        } else if ($role == 'student') {
+            $data['title'] = 'Progma | Login Student';
+        } else {
+            $data['title'] = 'Progma | Login Admin';
+        }
+        session()->set('bRole', $role);
         return view('v_login', $data);
     }
 
@@ -30,15 +37,20 @@ class Login extends BaseController
         } else {
             $getOne = $this->user->checkUser($username);
             if ($getOne && password_verify($password, rtrim($getOne['password']))) {
-                session()->set('userid', $getOne['userid']);
-                session()->set('name', $getOne['fullname']);
-                session()->set('role', $getOne['role']);
                 $rolename = $this->role->getOneByRoleId($getOne['role']);
-                if ($rolename['rolename']) {
-                    $role = $rolename['rolename'];
-                    $roleid = $getOne['role'];
+                if (session()->get('bRole') == $rolename['rolename']) {
+                    session()->set('userid', $getOne['userid']);
+                    session()->set('name', $getOne['fullname']);
+                    session()->set('role', $getOne['role']);
+                    if ($rolename['rolename']) {
+                        $role = $rolename['rolename'];
+                        $roleid = $getOne['role'];
+                    } else {
+                        $role = 'This user not having roles';
+                    }
                 } else {
-                    $role = 'This user not having roles';
+                    $err++;
+                    $msg = 'You are not allowed to login another role from ' . ucfirst(session()->get('bRole'));
                 }
             } else {
                 $err++;

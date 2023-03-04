@@ -51,12 +51,12 @@
                             </div>
                         </form>
 
-                        <p class="text-center fs-7">
-                            <span>For Student?</span>
-                            <a href="<?= base_url('register/student') ?>">
+                        <!-- <p class="text-center fs-7"> -->
+                        <!-- <span>For Student?</span> -->
+                        <!-- <a href="">
                                 <span>Register here as student</span>
-                            </a>
-                        </p>
+                            </a> -->
+                        <!-- </p> -->
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
         var ic = `<i class='bx bx-loader-alt fs-4 bx-spin'></i>`;
         $('#btn-login').html(ic);
         $('#btn-login').attr('disabled', true);
-        var link = '<?= base_url('login/auth') ?>',
+        var link = '<?= base_url('auth') ?>',
             uname = $('#uname').val(),
             pass = $('#password').val();
 

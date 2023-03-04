@@ -14,6 +14,8 @@
 <body>
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-            <?= $this->include('split/v_sidebar') ?>
+            <?php if (session()->get('role') == 1) : ?>
+                <?= $this->include('split/v_sidebar') ?>
+            <?php endif; ?>
             <div class="layout-page">
                 <?= $this->include('split/v_navbar') ?>

@@ -29,11 +29,12 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->add('/', 'Auth\Login::index');
+$routes->add('/', 'Home::landingPage');
 
 // Login Page
 $routes->add('/login', 'Auth\Login::index');
-$routes->add('/login/auth', 'Auth\Login::loginAuth');
+$routes->add('/login/(:any)', 'Auth\Login::index/$1');
+$routes->add('/auth', 'Auth\Login::loginAuth');
 $routes->add('/logout', 'Auth\Login::logout');
 
 // Register for Student
@@ -50,6 +51,18 @@ $routes->add('/classroom', 'master\ClassGroup::index');
 $routes->add('/user/table', 'master\User::datatable');
 $routes->add('/role/table', 'master\Role::datatable');
 $routes->add('/classroom/table', 'master\ClassGroup::datatable');
+
+// Show Form CRUD Modal
+$routes->add('/user/form', 'master\User::showForm');
+$routes->add('/user/form/(:any)', 'master\User::showForm/$1');
+
+// Select2 Load
+$routes->add('/role/getRoles', 'master\Role::getRoles');
+
+// CRUD Proses
+$routes->add('/user/add', 'master\User::userPro');
+$routes->add('/user/update', 'master\User::userPro');
+$routes->add('/user/delete', 'master\User::hapus');
 
 /*
  * --------------------------------------------------------------------

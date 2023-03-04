@@ -59,6 +59,11 @@
                         </a>
                     </li>
                     <li class="menu-item">
+                        <a href="<?= base_url('tasklist') ?>" class="menu-link">
+                            <div data-i18n="Without menu">Task List</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
                         <a href="layouts-without-menu.html" class="menu-link">
                             <div data-i18n="Without menu">File</div>
                         </a>

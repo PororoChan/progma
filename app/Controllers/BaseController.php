@@ -54,6 +54,7 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Load Model
+        helper('decodeValue');
         $this->db = db_connect();
         $this->user = new Msuser();
         $this->role = new Msrole();

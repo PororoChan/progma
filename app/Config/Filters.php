@@ -74,6 +74,12 @@ class Filters extends BaseConfig
         'isNotLogin' => [
             'before' => [
                 '/dashboard',
+                '/user',
+                '/user/*',
+                '/role',
+                '/role/*',
+                '/classroom',
+                '/classroom/*',
             ]
         ]
     ];

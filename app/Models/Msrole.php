@@ -34,4 +34,8 @@ class Msrole extends Model
             ->where('roleid', $roleid)
             ->get()->getRowArray();
     }
+    public function getAllRole()
+    {
+        return $this->builder->get()->getResultArray();
+    }
 }

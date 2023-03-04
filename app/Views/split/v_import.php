@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="<?= base_url('public/assets/css/boxicons.css') ?>">
 <link rel="stylesheet" href="<?= base_url('public/assets/css/auth.css') ?>">
 <link rel="stylesheet" href="<?= base_url('public/assets/css/datatables.css') ?>">
+<link rel="stylesheet" href="<?= base_url('public/assets/css/select2.css') ?>">
+<link rel="stylesheet" href="<?= base_url('public/assets/css/aos.css') ?>">
 
 <!-- Javascript -->
 <script src="<?= base_url('public/assets/js/jquery.js') ?>"></script>
@@ -15,3 +17,5 @@
 <script src="<?= base_url('public/assets/js/dashboard.js') ?>"></script>
 <script src="<?= base_url('public/assets/js/fontawesome.js') ?>"></script>
 <script src="<?= base_url('public/assets/js/datatables.js') ?>"></script>
+<script src="<?= base_url('public/assets/js/select2.js') ?>"></script>
+<script src="<?= base_url('public/assets/js/aos.js') ?>"></script>

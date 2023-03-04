@@ -79,7 +79,7 @@ defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9);      // lowest au
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125);    // highest automatically-assigned error code
 
 $base = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) : 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
-$profileAsset = 'public/assets/img/profiles';
+$profileAsset = 'public/assets/img/profiles/';
 
 defined('PROFILE') || define('PROFILE', $profileAsset);
 defined('BASE') || define('BASE', $base);

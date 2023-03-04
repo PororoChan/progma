@@ -33,8 +33,20 @@ class Msuser extends Model
     public function datatable()
     {
         return $this->builder
-            ->select('msuser.fullname as fullname, msuser.userdata, msuser.username, msrole.rolename')
+            ->select('msuser.userid, msuser.fullname as fullname, msuser.userdata, msuser.username, msrole.rolename')
             ->join('msrole', 'msrole.roleid=msuser.role');
+    }
+    public function cekUname($username)
+    {
+        return $this->builder
+            ->where('username', $username)
+            ->get()->getRowArray();
+    }
+    public function getCountRoleByRoleid($roleid)
+    {
+        return $this->builder
+            ->where('role', $roleid)
+            ->countAllResults();
     }
     public function getOne($userid)
     {
@@ -45,5 +57,13 @@ class Msuser extends Model
     public function tambah($data)
     {
         return $this->builder->insert($data);
+    }
+    public function ubah($data, $userid)
+    {
+        return $this->builder->update($data, ['userid' => $userid]);
+    }
+    public function hapus($id)
+    {
+        return $this->builder->delete(['userid' => $id]);
     }
 }

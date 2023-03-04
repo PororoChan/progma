@@ -12,30 +12,19 @@ class Role extends BaseController
     {
         $data = [
             'datas' => $this->user,
-            'title' => 'Master Role - ProgMa',
+            'roles' => $this->role,
+            'title' => 'Menu Role - ProgMa',
         ];
         return view('master/role/v_role', $data);
     }
 
-    public function datatable()
+    public function getRoles()
     {
-        $table = Datatables::method([Msrole::class, 'datatable'], 'sortable')
-            ->make();
-
-        $table->updateRow(function ($db, $no) {
-            return [
-                $no,
-                ucfirst($db->rolename),
-                date('d F Y', strtotime($db->createddate)),
-                $db->name,
-                "
-                <td>
-                    <button class='btn btn-sm btn-warning'><i class='bx bx-pencil'></i></button>
-                    <button class='btn btn-sm btn-danger'><i class='bx bx-trash'></i></button>
-                </td>
-                "
-            ];
-        });
-        $table->toJson();
+        $res = [];
+        $roles = $this->role->getAllRole();
+        foreach ($roles as $r) {
+            $res[] = array('id' => $r['roleid'], 'text' => ucfirst($r['rolename']));
+        }
+        echo json_encode($res);
     }
 }
