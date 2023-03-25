@@ -8,6 +8,28 @@
     <title><?= $title ?></title>
     <script src="<?= base_url('public/assets/js/helpers.js') ?>"></script>
     <script src="<?= base_url('public/assets/js/config.js') ?>"></script>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
     <?= $this->include('split/v_import') ?>
 </head>
 

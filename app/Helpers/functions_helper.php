@@ -1,11 +1,11 @@
 <?php
 function enVal($value)
 {
-    return base64_encode(base64_encode($value));
+    return trim(base64_encode(base64_encode($value)), '=');
 }
 function deVal($encoded)
 {
-    return base64_decode(base64_decode($encoded));
+    return trim(base64_decode(base64_decode($encoded)), '=');
 }
 function iconRole($rolename)
 {
@@ -18,4 +18,13 @@ function iconRole($rolename)
     } else {
         return 'fas fa-user';
     }
+}
+function genToken()
+{
+    $token = mb_strimwidth(enVal(date('s')), 0, 6);
+    return strtoupper($token);
+}
+function genColor()
+{
+    return 'rgba(' . rand(0, 200) . ',' . rand(0, 200) . ',' . rand(0, 200) . ')';
 }

@@ -80,8 +80,10 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125);    // highest a
 
 $base = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) : 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
 $profileAsset = 'public/assets/img/profiles/';
+$classBg = 'public/assets/img/card/';
 
 defined('PROFILE') || define('PROFILE', $profileAsset);
+defined('CASSET') || define('CASSET', $classBg);
 defined('BASE') || define('BASE', $base);
 
 /**

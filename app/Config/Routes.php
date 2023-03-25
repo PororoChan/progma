@@ -46,6 +46,9 @@ $routes->add('/dashboard', 'Dashboard::index');
 $routes->add('/user', 'master\User::index');
 $routes->add('/role', 'master\Role::index');
 $routes->add('/classroom', 'master\ClassGroup::index');
+// Index Page kecuali admin
+$routes->add('/room', 'Classroom::index');
+$routes->add('/b/room', 'Classroom::backToRoom');
 
 // Datatable 
 $routes->add('/user/table', 'master\User::datatable');
@@ -55,6 +58,7 @@ $routes->add('/classroom/table', 'master\ClassGroup::datatable');
 // Show Form CRUD Modal
 $routes->add('/user/form', 'master\User::showForm');
 $routes->add('/user/form/(:any)', 'master\User::showForm/$1');
+$routes->add('/room/form', 'Classroom::showForm');
 
 // Select2 Load
 $routes->add('/role/getRoles', 'master\Role::getRoles');
@@ -63,6 +67,10 @@ $routes->add('/role/getRoles', 'master\Role::getRoles');
 $routes->add('/user/add', 'master\User::userPro');
 $routes->add('/user/update', 'master\User::userPro');
 $routes->add('/user/delete', 'master\User::hapus');
+$routes->add('/room/add', 'Classroom::tambah');
+
+// Room Detail for Student and Teacher
+$routes->add('/room/d/(:any)', 'Classroom::roomDetail/$1');
 
 /*
  * --------------------------------------------------------------------

@@ -17,6 +17,21 @@
         #dropLogin li a:hover {
             transition: 0.3s ease-in-out;
         }
+
+        #btnLoginOpt i {
+            transition: all 0.3s ease-in-out;
+            display: none;
+        }
+
+        #btnLoginOpt:hover {
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #btnLoginOpt:hover i {
+            transition: all 0.3s ease-in-out;
+            display: block;
+        }
     </style>
 </head>
 
@@ -32,7 +47,7 @@
                         </button>
 
                         <div class="collapse navbar-collapse position-relative" id="navbar-ex-3">
-                            <button class="btn btn-outline-primary ms-auto" id="btnLoginOpt" type="button">Login Now</button>
+                            <button class="btn ms-auto text-primary d-flex align-items-center" id="btnLoginOpt" type="button"><i class="bx bx-compass me-2"></i>Start Journey</button>
                             <ul class="dropdown-menu dropdown-menu-end" id="dropLogin" style="position: absolute; width: 250px; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 40px);">
                                 <li>
                                     <a class="dropdown-item text-primary" href="<?= base_url('login/' . enVal('admin')) ?>"><i class="fas fa-user-cog me-2"></i><span class="text-secondary">Login as Admin</span></a>

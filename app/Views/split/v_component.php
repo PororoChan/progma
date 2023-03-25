@@ -30,6 +30,28 @@
     </div>
 </div>
 
+<!-- Modal Show Token -->
+<div class="modal fade" id="smAlert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="smSize">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-flex align-items-center fs-7">
+                    <i class="me-2 fs-5 text-primary" id="smIcon"></i>
+                    <span class="modal-title fw-semibold" id="smTitle"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control" name="tokent" id="smToken" readonly>
+                    <button class="btn btn-sm btn-outline-secondary" style="min-height: 38.94px" onclick="return copyToken()">
+                        <i class="bx bx-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal Delete -->
 <div class="modal fade" id="delModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" id="delSize">

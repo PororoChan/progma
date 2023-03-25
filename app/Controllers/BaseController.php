@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Mskelas;
 use App\Models\Msrole;
 use App\Models\Msuser;
 use CodeIgniter\Controller;
@@ -54,10 +55,11 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Load Model
-        helper('decodeValue');
+        helper('functions');
         $this->db = db_connect();
         $this->user = new Msuser();
         $this->role = new Msrole();
+        $this->kelas = new Mskelas();
 
         // Preload any models, libraries, etc, here.
 

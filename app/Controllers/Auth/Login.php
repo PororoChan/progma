@@ -16,7 +16,7 @@ class Login extends BaseController
             $data['title'] = 'Progma | Login Student';
         } else {
             $data['title'] = 'Progma | Login Admin';
-        }
+        } 
         session()->set('bRole', $role);
         return view('v_login', $data);
     }
@@ -50,7 +50,7 @@ class Login extends BaseController
                     }
                 } else {
                     $err++;
-                    $msg = 'You are not allowed to login another role from ' . ucfirst(session()->get('bRole'));
+                    $msg = 'Login Credentials as ' . ucfirst(session()->get('bRole')) . ' only';
                 }
             } else {
                 $err++;

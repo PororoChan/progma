@@ -80,6 +80,8 @@ class Filters extends BaseConfig
                 '/role/*',
                 '/classroom',
                 '/classroom/*',
+                '/room',
+                '/room/*',
             ]
         ]
     ];

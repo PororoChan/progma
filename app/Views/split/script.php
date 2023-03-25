@@ -70,6 +70,20 @@
         })
     }
 
+    function displayToken(title, size, icon, token) {
+        $('#smSize').addClass(size);
+        $('#smIcon').addClass(icon);
+        $('#smTitle').text(title);
+        $('#smToken').val(token);
+        $('#smAlert').modal('show');
+    }
+
+    function copyToken() {
+        $('#smToken').select();
+        document.execCommand('copy');
+        basicToast('bg-success', 'Token Copied', 'bx bx-check');
+    }
+
     function delModal(title, size, icon, id, btn, msg, link) {
         $('#delSize').addClass(size);
         $('#linkDel').val(link);
@@ -122,16 +136,9 @@
         })
 
         // Trigger login option on button hover
-        $('#btnLoginOpt').hover(
-            function() {
-                $('#dropLogin').addClass('show')
-            },
-            function() {
-                $('#dropLogin').mouseleave(function() {
-                    $('#dropLogin').removeClass('show')
-                })
-            }
-        )
+        $('#btnLoginOpt').click(function() {
+            $('#dropLogin').toggleClass('show');
+        })
 
         $('#dropLogin li a').hover(
             function() {

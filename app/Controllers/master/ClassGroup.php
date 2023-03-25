@@ -28,11 +28,14 @@ class ClassGroup extends BaseController
                 $db->title,
                 $db->author,
                 $db->token,
-                $db->ishidden,
-                $db->isactive,
+                ($db->ishidden == 1 ? 'Yes' : 'No'),
+                ($db->isactive == 1 ? 'Yes' : 'No'),
                 date('d F Y', strtotime($db->createddate)),
                 "
-                <td></td>
+                <td>
+                    <button class='btn btn-sm btn-warning'><i class='bx bx-pencil'></i></button>
+                    <button class='btn btn-sm btn-danger'><i class='bx bx-trash'></i></button>
+                </td>
                 "
             ];
         });
